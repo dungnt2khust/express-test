@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
   var cookie = req?.headers?.cookie;
   var random = Math.random();
   res.setHeader('set-cookie', `random=${random}`); // options is optional
-  res.send('Cookie add');
+  res.send('Cookie add' + ` random=${random}`);
 });
 
 app.listen(port, () => {
