@@ -9,7 +9,7 @@ const corsConfig = {
 app.use(cors(corsConfig));
 app.get('/', (req, res) => {
   var cookie = req?.headers?.cookie;
-  res.send(cookie);
+  res.send('Cookie ' + cookie);
 });
 
 app.listen(port, () => {
