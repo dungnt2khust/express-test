@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const port = 3000;
 var cors = require('cors');
-// app.use(cors);
 // Add headers before the routes are defined
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
@@ -27,6 +26,8 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
+app.use(cors);
+
 app.get('/', (req, res) => {
   var cookie = req?.headers?.cookie;
   res.send('Cookie ' + cookie);
