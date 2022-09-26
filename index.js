@@ -8,7 +8,8 @@ const corsConfig = {
 };
 app.use(cors(corsConfig));
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  var cookie = req?.headers?.cookie;
+  res.send(cookie);
 });
 
 app.listen(port, () => {
