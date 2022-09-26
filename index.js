@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 var cors = require('cors');
-app.use(cors);
+// app.use(cors);
 // Add headers before the routes are defined
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
