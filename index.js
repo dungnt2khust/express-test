@@ -4,7 +4,7 @@ const port = 3000;
 var cors = require('cors');
 const corsConfig = {
   credentials: true,
-  origin: 'https://test-vue-eddieonthecode.firebaseapp.com/',
+  origin: true,
 };
 app.use(cors(corsConfig));
 app.get('/', (req, res) => {
