@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 var cors = require('cors');
 // Add headers before the routes are defined
-app.use(cors({ origin: 'https://test-vue-eddieonthecode.firebaseapp.com'));
+app.use(cors({ origin: 'https://test-vue-eddieonthecode.firebaseapp.com' }));
 
 app.get('/', (req, res) => {
   var rand = Math.random();
