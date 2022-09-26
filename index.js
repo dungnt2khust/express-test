@@ -5,7 +5,10 @@ var cors = require('cors');
 // Add headers before the routes are defined
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Origin',
+    'https://test-vue-eddieonthecode.firebaseapp.com/'
+  );
 
   // Request methods you wish to allow
   res.setHeader(
@@ -26,7 +29,12 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
-app.use(cors({ origin: true, Credential: true }));
+app.use(
+  cors({
+    origin: 'https://test-vue-eddieonthecode.firebaseapp.com/',
+    Credential: true,
+  })
+);
 
 app.get('/', (req, res) => {
   var cookie = req?.headers?.cookie;
