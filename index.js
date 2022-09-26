@@ -25,8 +25,7 @@ app.use(function (req, res, next) {
 
   // Pass to next layer of middleware
   next();
-});
-app.use(cors);
+}, cors);
 
 app.get('/', (req, res) => {
   var cookie = req?.headers?.cookie;
