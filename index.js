@@ -5,7 +5,7 @@ var cors = require('cors');
 // Add headers before the routes are defined
 app.use(cors({ origin: 'https://test-vue-eddieonthecode.firebaseapp.com' }));
 
-app.post('/', (req, res) => {
+app.get('/', (req, res) => {
   var cookie = req?.headers?.cookie;
   res.send('Cookie ' + cookie);
 });
