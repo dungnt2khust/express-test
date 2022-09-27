@@ -8,16 +8,16 @@ var words = [];
 app.use(cors({ origin: 'https://test-vue-eddieonthecode.firebaseapp.com' }));
 
 app.get('/', (req, res) => {
-  var data = fs.readFileSync('data.json', 'utf8');
+  let data = fs.readFileSync('data.json', 'utf8');
   words = JSON.parse(data);
-  var cookie = req?.headers?.cookie;
+  let cookie = req?.headers?.cookie;
   if (cookie) res.send('Cookie ' + cookie);
 });
 
 app.post('/', (req, res) => {
-  var cookie = req?.headers?.cookie;
+  let cookie = req?.headers?.cookie;
   if (cookie == '050201') {
-    var data = fs.readFileSync('data.json', 'utf8');
+    let data = fs.readFileSync('data.json', 'utf8');
     words = JSON.parse(data);
     words.push(new Date());
     fs.writeFile('data.json', JSON.stringify(words), 'utf8');
