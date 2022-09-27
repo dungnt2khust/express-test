@@ -6,9 +6,8 @@ var cors = require('cors');
 app.use(cors({ origin: 'https://test-vue-eddieonthecode.firebaseapp.com' }));
 
 app.post('/', (req, res) => {
-  var rand = Math.random();
-  res.setHeader('set-cookie', `random=${rand}`);
-  res.send('Cookie ' + `random=${rand}`);
+  var cookie = req?.headers?.cookie;
+  res.send('Cookie ' + cookie);
 });
 
 app.listen(port, () => {
