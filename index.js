@@ -3,7 +3,6 @@ const app = express();
 const port = 3000;
 var cors = require('cors');
 var fs = require('fs');
-var data = fs.readFileSync('data.json', 'utf8');
 var words = [];
 // Add headers before the routes are defined
 app.use(cors({ origin: 'https://test-vue-eddieonthecode.firebaseapp.com' }));
